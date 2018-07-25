@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		626A5A9AB102E833A105FDA3 /* Pods_iosdev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16DC997043FB356D5625CAB /* Pods_iosdev.framework */; };
+		D1B64F372108943500D1F9C4 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64F362108943500D1F9C4 /* JsonModel.swift */; };
 		D1F0EB3C2107BDEC00542E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0EB3B2107BDEC00542E44 /* AppDelegate.swift */; };
 		D1F0EB3E2107BDEC00542E44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F0EB3D2107BDEC00542E44 /* ViewController.swift */; };
 		D1F0EB412107BDEC00542E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F0EB3F2107BDEC00542E44 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		11851FDBC5C19DDBBF63327B /* Pods-iosdev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosdev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosdev/Pods-iosdev.debug.xcconfig"; sourceTree = "<group>"; };
 		97F77E3AE2B24C668A3C2DBB /* Pods-iosdev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosdev.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosdev/Pods-iosdev.release.xcconfig"; sourceTree = "<group>"; };
 		D16DC997043FB356D5625CAB /* Pods_iosdev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosdev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1B64F362108943500D1F9C4 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
 		D1F0EB382107BDEC00542E44 /* iosdev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F0EB3B2107BDEC00542E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1F0EB3D2107BDEC00542E44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				D1F0EB4F2107DEFD00542E44 /* CustomCell.swift */,
 				D1F0EB3F2107BDEC00542E44 /* Main.storyboard */,
 				D1F0EB4D2107D38600542E44 /* TableViewController.swift */,
+				D1B64F362108943500D1F9C4 /* JsonModel.swift */,
 				D1F0EB422107BDED00542E44 /* Assets.xcassets */,
 				D1F0EB442107BDED00542E44 /* LaunchScreen.storyboard */,
 				D1F0EB472107BDED00542E44 /* Info.plist */,
@@ -105,7 +108,6 @@
 				D1F0EB342107BDEC00542E44 /* Sources */,
 				D1F0EB352107BDEC00542E44 /* Frameworks */,
 				D1F0EB362107BDEC00542E44 /* Resources */,
-				2037AEA762ED2B11973E07C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,24 +165,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2037AEA762ED2B11973E07C3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iosdev/Pods-iosdev-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iosdev/Pods-iosdev-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		301E2301EC4FC803288A1390 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B64F372108943500D1F9C4 /* JsonModel.swift in Sources */,
 				D1F0EB3E2107BDEC00542E44 /* ViewController.swift in Sources */,
 				D1F0EB4E2107D38600542E44 /* TableViewController.swift in Sources */,
 				D1F0EB502107DEFD00542E44 /* CustomCell.swift in Sources */,

@@ -6,5 +6,4 @@ target 'iosdev' do
   use_frameworks!
 
   # Pods for iosdev
-  pod 'SwiftyJSON', '~> 4.0'
 end

@@ -7,12 +7,15 @@
 //
 
 import UIKit
-import SwiftyJSON
 
-var posts:JSON = []
-
+var posts = [Children]()
+extension Int {
+    var stringValue:String {
+        return "\(self)"
+    }
+}
 class TableViewController: UITableViewController {
-
+    
     @IBOutlet var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +24,11 @@ class TableViewController: UITableViewController {
         URLSession.shared.dataTask(with: baseUrl) {(data,response, err) in
             guard let data = data else {return}
             do {
-                let json = try JSON(data: data)
-                posts = json["data"]["children"]
+//                let json = try JSON(data: data)
+//                posts = json["data"]["children"]
+                let json = try JSONDecoder().decode(JsonModel.self, from: data)
+//                print(json.data?.children?)
+                posts = (json.data?.children)!
                 DispatchQueue.main.async {
                     self.table.reloadData()
                 }
@@ -49,15 +55,18 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:CustomCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomCell
-        cell.title?.text = posts[indexPath.row]["data"]["title"].rawString()
-        cell.author?.text = posts[indexPath.row]["data"]["author"].rawString()
-        cell.num_comment?.text = posts[indexPath.row]["data"]["num_comments"].rawString()
+        cell.title?.text = posts[indexPath.row].data?.title
+        cell.author?.text = posts[indexPath.row].data?.author
+        let optnum = posts[indexPath.row].data?.numComments?.stringValue
+        cell.num_comment.text = optnum
+        
+
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        let alert = UIAlertController(title: posts[indexPath.row]["data"]["title"].rawString(), message: posts[indexPath.row]["data"]["selftext"].rawString(), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: posts[indexPath.row].data?.title, message: posts[indexPath.row].data?.selftext, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
